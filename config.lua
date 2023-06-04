@@ -22,12 +22,7 @@ require"nvim-treesitter.configs".setup {
 }
  
 -- TELESCOPE
-require("telescope").setup {
-  file_ignore_patterns = {
-    "^.git/",
-    "^node_modules/"
-  }
-}
+require("telescope").setup()
 local builtin = require("telescope.builtin")
 
 -- LSP
