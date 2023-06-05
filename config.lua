@@ -14,8 +14,6 @@ require"lualine".setup({
 require"nvim-treesitter.configs".setup {
   auto_install = true,
   sync_install = false,
-  ensure_installed = { "c", "cpp", "lua", "rust", "fennel", "typescript", "javascript", "commonlisp" },
-
   highlight = {
     enable = true
   }
@@ -26,24 +24,13 @@ require("telescope").setup()
 local builtin = require("telescope.builtin")
 
 -- LSP
-local servers = { "clangd", "rust_analyzer", "tsserver", "fennel_language_server" }
 local lspconfig = require("lspconfig")
 local cmp = require("cmp")
 
---lspconfig.ols.setup {}
 lspconfig.clangd.setup {}
+lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.rust_analyzer.setup {}
-lspconfig.fennel_language_server.setup {}
-
-for _, lsp in pairs(servers) do
-  require("lspconfig")[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
 
 cmp.setup({
   snippet = {
