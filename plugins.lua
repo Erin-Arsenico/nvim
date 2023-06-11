@@ -18,7 +18,8 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/nvim-cmp'
-
+  
+  use { 'catppuccin/nvim', as = 'catppuccin'}
   use ( 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use { 'nvim-telescope/telescope.nvim', requires = {{ 'nvim-lua/plenary.nvim' }}}
   use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true }}
